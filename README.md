@@ -13,3 +13,13 @@ ng new intro2angular
 
 // up server
 ng serve
+
+# lesson 3
+## architecture
+
+# lesson 4
+## decorators
+Это по сути обертка над объектом, которая позволяет делать что либо, до выполнения функции или инициализации класса.
+
+# lesson 5
+## Lifecycle Hooks
