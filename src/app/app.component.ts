@@ -21,24 +21,24 @@ import construct = Reflect.construct;
 //   return descriptor;
 // }
 
-function log(className) {
-  console.log(className);
+// function log(className) {
+//   console.log(className);
+//
+//   return (...args) => {
+//     console.log("arg", args);
+//
+//     return new className(...args);
+//   }
+// }
 
-  return (...args) => {
-    console.log("arg", args);
-
-    return new className(...args);
-  }
-}
-
-@log
-class myExampleClass {
-    constructor(arg1, arg2) {
-        console.log("Constructor fired!");
-    }
-}
-
-const cl = new myExampleClass(5, 10);
+// @log
+// class myExampleClass {
+//     constructor(arg1, arg2) {
+//         console.log("Constructor fired!");
+//     }
+// }
+//
+// const cl = new myExampleClass(5, 10);
 
 @Component({
   selector: 'app-root',
@@ -49,12 +49,13 @@ export class AppComponent {
   title = 'app';
 
   constructor() {
+
     // output "This func was hacked!"
-    this.aSimpleMethod(5);
+    // this.aSimpleMethod(5);
   }
 
   // @log
-  aSimpleMethod(a) {
-    return a * a;
-  }
+  // aSimpleMethod(a) {
+  //   return a * a;
+  // }
 }
