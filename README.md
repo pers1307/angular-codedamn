@@ -41,3 +41,52 @@ ng serve
 
 // generate component
 ng generate component hello
+
+# lesson 7
+## Interpolation and Expressions
+
+# lesson 8
+## Data Binding (One way) в одну сторону
+
+``` js
+public inputValue = 'test!';
+```
+
+Подходит для вывода информации
+```html
+<input type="text" value="{{inputValue}}">
+```
+
+Подходит для изменения значения атрибута.
+Это зависит от интерполяции
+```html
+<input type="text" [value]="inputValue" [disabled]="{{inputValue}}">
+```
+
+[] - Это связка из компонента в шаблон
+```html
+<input type="text" [value]="inputValue">
+```
+
+() - связка из шаблона в компонент
+```html
+<button (click)="myClickfunction()">Hey There!</button>
+```
+
+# lesson 9
+## Two way data binding (связка в обе стороны)
+
+```typescript
+  public text = '';
+
+  updateTextValue(e) {
+    this.text = e.target.value;
+  }
+```
+
+```html
+<input type="text" [value]="text" (input)="updateTextValue($event)">
+<br>
+{{ text }}
+```
+

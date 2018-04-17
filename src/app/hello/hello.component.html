@@ -1,3 +1,20 @@
 <p>
-  hello works!
+  hello works! {{ myVar }} {{ 10 * 5 }} {{ bitwiseOR }}
+  <br>
+  {{ doSomeHeavyTask() }}
+</p>
+
+<p>
+  <input type="text" value="{{inputValue}}">
+  <input type="text" [value]="inputValue">
+
+  <button (click)="myClickfunction()">Hey There!</button>
+</p>
+
+<p>
+  <input type="text" [value]="text" (input)="updateTextValue($event)">
+  <br>
+  {{ text }}
+
+  <input type="text" [(ngModel)]="text">
 </p>
