@@ -1,6 +1,8 @@
 # lesson 1
 ## Async and Await
 
+[Link to article](https://medium.com/@balramchavan/using-async-await-feature-in-angular-587dd56fdc77)
+
 Promise Case
 ```typescript
   async ff() {
@@ -232,4 +234,31 @@ public getDataFromHttp() {
 
 # lesson 14
 ## Routing
+
+// короткий синтаксис для генерации компонента
+ng g c Home
+
+Module
+```typescript
+RouterModule.forRoot([
+        {
+            path: 'data',
+            component: DataComponent
+        },
+        {
+          path: '',
+          component: HomeComponent
+        }
+    ])
+```
+
+Template main component
+```html
+<router-outlet></router-outlet>
+```
+
+Link on page
+```html
+<a routerLink="/data">Go to data page</a>
+```
 

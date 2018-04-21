@@ -9,7 +9,7 @@ export class AsyncComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+    async ngOnInit() {
     // this.resolveAfter2Seconds(10);
 
     // this.resolveAfter2Seconds(10).then(value => {
