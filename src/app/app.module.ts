@@ -10,6 +10,8 @@ import { AsyncComponent } from './async/async.component';
 import { HomeComponent } from './home/home.component';
 import { DataComponent } from './data/data.component';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   // для компонент, директив, пайпов и прочих независимых кусков кода
@@ -17,6 +19,8 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     HomeComponent,
     DataComponent,
+    LoginComponent,
+    AdminComponent,
     HelloComponent,
     AsyncComponent
   ],
@@ -33,6 +37,14 @@ import { RouterModule } from '@angular/router';
         {
           path: '',
           component: HomeComponent
+        },
+        {
+            path: 'login',
+            component: LoginComponent
+        },
+        {
+            path: 'admin',
+            component: AdminComponent
         }
     ])
   ],
