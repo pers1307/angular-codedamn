@@ -1,3 +1,31 @@
+# lesson 1
+## Async and Await
+
+Promise Case
+```typescript
+  async ff() {
+        const result = <number>await this.resolveAfter2Seconds(10);
+        console.log('After 10 sec', result);
+    }
+  
+    resolveAfter2Seconds(x) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve(x);
+                console.log('!!!');
+            }, 2000);
+        });
+    }
+```
+
+Http Case
+```typescript
+  async getAsyncData() {
+      this.asyncResult = await this.httpClient.get<Employee>(this.url).toPromise();
+      console.log('No issues, I will wait until promise is resolved..');
+    }
+```
+
 # lesson 2
 ## install Angular 2
 
@@ -197,3 +225,11 @@ public getDataFromHttp() {
 
 # lesson 13
 ## Configure Proxy for API calls
+
+Позволяет на уровне конфига вебпака переопределять пути
+То есть не нужно будет менять пути к апи в коде
+Нужно будет их поменять в конфиг файле
+
+# lesson 14
+## Routing
+

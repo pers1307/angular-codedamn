@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface myData {
+  obj: Array<Object>
+}
+
 @Injectable()
 export class RecordsService {
 
@@ -26,7 +30,7 @@ export class RecordsService {
   }
 
   public getDataFromHttp() {
-    return this.http.get('')
+    return this.http.get<myData>('')
         .subscribe(data => {
           console.log(data);
         });

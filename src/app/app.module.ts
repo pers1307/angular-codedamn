@@ -6,13 +6,14 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { RecordsService } from './records.service';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AsyncComponent } from './async/async.component';
 
 @NgModule({
   // для компонент, директив, пайпов и прочих независимых кусков кода
   declarations: [
     AppComponent,
-    HelloComponent
+    HelloComponent,
+    AsyncComponent
   ],
   // импортятся модули
   imports: [
