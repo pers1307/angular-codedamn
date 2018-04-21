@@ -14,6 +14,7 @@ export class HelloComponent implements OnInit {
   public inputValue = 'test!';
   public text = '';
   public records = [];
+  public amount = 123.25;
 
   constructor(
       private recordService: RecordsService

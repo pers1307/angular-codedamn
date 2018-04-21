@@ -34,3 +34,9 @@
     <td>{{ record.online }}</td>
   </tr>
 </table>
+
+<br>
+
+Somebody owes me {{ amount | currency: 'INR' | reverse }}
+
+<!--Somebody owes me {{ amount | pipe1:option1:option1:option1... | pipe1:option1... }}-->

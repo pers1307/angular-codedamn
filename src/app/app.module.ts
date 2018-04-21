@@ -12,6 +12,7 @@ import { DataComponent } from './data/data.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { ReversePipe } from './reverse.pipe';
 
 @NgModule({
   // для компонент, директив, пайпов и прочих независимых кусков кода
@@ -20,6 +21,7 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     DataComponent,
     LoginComponent,
+    ReversePipe,
     AdminComponent,
     HelloComponent,
     AsyncComponent

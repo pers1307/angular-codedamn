@@ -262,3 +262,50 @@ Link on page
 <a routerLink="/data">Go to data page</a>
 ```
 
+# lesson 27
+## Pipes
+
+```html
+Somebody owes me {{ amount | currency: 'INR' }}
+Somebody owes me {{ amount | pipe1:option1:option1:option1... | pipe1:option1... }}
+```
+# lesson 28
+## Custom Pipes
+
+// Generate pipe command
+ng generate pipe reverse
+
+Module
+```typescript
+// для компонент, директив, пайпов и прочих независимых кусков кода
+  declarations: [
+    ReversePipe,
+  ],
+```
+
+Pipe
+```typescript
+// для компонент, директив, пайпов и прочих независимых кусков кода
+  import { Pipe, PipeTransform } from '@angular/core';
+  
+  @Pipe({
+    name: 'reverse'
+  })
+  export class ReversePipe implements PipeTransform {
+  
+    transform(value: any, args?: any): any {
+      console.log(value);
+      return value + "++";
+    }
+  
+  }
+```
+
+Usage
+```html
+Somebody owes me {{ amount | currency: 'INR' | reverse }}
+```
+
+# lesson 29
+## Directives
+
