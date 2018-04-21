@@ -18,3 +18,19 @@
 
   <input type="text" [(ngModel)]="text">
 </p>
+
+<table>
+  <tr>
+    <td>№</td>
+    <td>Name</td>
+    <td>Is online?</td>
+  </tr>
+  <tr
+          *ngFor="let record of records; let myIndex = index; let evenRecord = even; let oddRecord = odd, let firstRecodr = first, let lastRecond = last"
+          [ngClass]="{odd : oddRecord, even : evenRecord, first : firstRecodr, last : lastRecond}"
+  >
+    <td>{{ myIndex + 1 }}</td>
+    <td>{{ record.name }}</td>
+    <td>{{ record.online }}</td>
+  </tr>
+</table>

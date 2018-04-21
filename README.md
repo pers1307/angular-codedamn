@@ -89,4 +89,111 @@ public inputValue = 'test!';
 <br>
 {{ text }}
 ```
+# lesson 10
+##  Looping with *ngFor
 
+```html
+<table>
+  <tr>
+    <td>№</td>
+    <td>Name</td>
+    <td>Is online?</td>
+  </tr>
+  <tr
+          *ngFor="let record of records; let myIndex = index; let evenRecord = even; let oddRecord = odd, let firstRecodr = first, let lastRecond = last"
+          [ngClass]="{odd : oddRecord, even : evenRecord, first : firstRecodr, last : lastRecond}"
+  >
+    <td>{{ myIndex + 1 }}</td>
+    <td>{{ record.name }}</td>
+    <td>{{ record.online }}</td>
+  </tr>
+</table>
+```
+
+# lesson 11
+## Services
+
+Module
+```typescript
+@NgModule({
+  // для компонент, директив, пайпов и прочих независимых кусков кода
+  declarations: [
+    AppComponent,
+    HelloComponent
+  ],
+  // импортятся модули
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+  // для сервисов
+  providers: [RecordsService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+// create service
+ng g service records
+
+Service
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class RecordsService {
+
+  constructor() { }
+
+  public getData() {
+    return [
+        {
+            name: 'Yuri',
+            online: true
+        },
+        {
+            name: 'Yuri 2',
+            online: false
+        },
+        {
+            name: 'Yuri 3',
+            online: true
+        },
+    ];
+  }
+}
+```
+
+Component
+```typescript
+constructor(
+      private recordService: RecordsService
+  ) { }
+
+  ngOnInit() {
+    this.records = this.recordService.getData();
+  }
+```
+
+# lesson 12
+## HTTP Requests
+
+Module
+```typescript
+// импортятся модули
+  imports: [
+    HttpClientModule
+  ],
+```
+
+Service
+```typescript
+public getDataFromHttp() {
+    return this.http.get('')
+        .subscribe(data => {
+          console.log(data);
+        });
+  }
+```
+
+# lesson 13
+## Configure Proxy for API calls

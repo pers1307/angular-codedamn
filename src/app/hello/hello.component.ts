@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecordsService } from '../records.service';
 
 @Component({
   selector: 'app-hello',
@@ -12,10 +13,14 @@ export class HelloComponent implements OnInit {
   public i = 0;
   public inputValue = 'test!';
   public text = '';
+  public records = [];
 
-  constructor() { }
+  constructor(
+      private recordService: RecordsService
+  ) { }
 
   ngOnInit() {
+    this.records = this.recordService.getData();
   }
 
     /**
