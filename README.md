@@ -309,3 +309,56 @@ Somebody owes me {{ amount | currency: 'INR' | reverse }}
 # lesson 29
 ## Directives
 
+More about *ngIf
+```html
+<div *ngIf="someRandomValue; then trueBlock else falseBlock">Yes!!!</div>
+
+<ng-template #falseBlock>
+  <h3>No!!</h3>
+</ng-template>
+
+<ng-template #trueBlock>
+  <h3>Yes!!</h3>
+</ng-template>
+```
+
+```html
+<span ngNonBindable>{{ someRandomValue }}</span>
+```
+
+# lesson 30
+## Custom Directives
+
+Create custom 
+ng generate directive redblack
+
+Module
+```typescript
+// для компонент, директив, пайпов и прочих независимых кусков кода
+  declarations: [
+    RedblackDirective,
+  ],
+```
+
+Directive
+```typescript
+import {Directive, ElementRef} from '@angular/core';
+
+@Directive({
+  selector: '[appRedblack]'
+})
+export class RedblackDirective {
+
+  constructor(
+      private el: ElementRef
+  ) {
+    el.nativeElement.style.color = "while";
+    el.nativeElement.style.backgroundColor = "black";
+  }
+}
+```
+
+Usage in component
+```html
+<p appRedblack>Paragraph</p>
+```

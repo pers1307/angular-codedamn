@@ -40,3 +40,17 @@
 Somebody owes me {{ amount | currency: 'INR' | reverse }}
 
 <!--Somebody owes me {{ amount | pipe1:option1:option1:option1... | pipe1:option1... }}-->
+
+<div *ngIf="someRandomValue; then trueBlock else falseBlock">Yes!!!</div>
+
+<ng-template #falseBlock>
+  <h3>No!!</h3>
+</ng-template>
+
+<ng-template #trueBlock>
+  <h3>Yes!!</h3>
+</ng-template>
+
+<span ngNonBindable>{{ someRandomValue }}</span>
+
+<p appRedblack>Paragraph</p>

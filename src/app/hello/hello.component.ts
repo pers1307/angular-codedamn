@@ -15,6 +15,7 @@ export class HelloComponent implements OnInit {
   public text = '';
   public records = [];
   public amount = 123.25;
+  public someRandomValue = false;
 
   constructor(
       private recordService: RecordsService

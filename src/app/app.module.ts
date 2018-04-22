@@ -13,6 +13,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ReversePipe } from './reverse.pipe';
+import { RedblackDirective } from './redblack.directive';
 
 @NgModule({
   // для компонент, директив, пайпов и прочих независимых кусков кода
@@ -22,6 +23,7 @@ import { ReversePipe } from './reverse.pipe';
     DataComponent,
     LoginComponent,
     ReversePipe,
+    RedblackDirective,
     AdminComponent,
     HelloComponent,
     AsyncComponent
